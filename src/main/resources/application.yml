@@ -1,0 +1,5 @@
+server:
+  port: 8600
+
+missyou:
+  api-package: com.joy.missyou.api
