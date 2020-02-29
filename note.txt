@@ -1,0 +1,2 @@
+1. @Validated 与 @PathVariable 后面跟 @Max(10) 可以对 PathVariable 的参数做限制
+2.

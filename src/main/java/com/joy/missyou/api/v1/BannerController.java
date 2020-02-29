@@ -5,8 +5,10 @@ import com.joy.missyou.dto.PersonDTO;
 import com.joy.missyou.exception.http.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Max;
 import java.util.Map;
 
 /**
@@ -14,6 +16,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/banner")
+@Validated
 public class BannerController {
 
     @Autowired
@@ -21,7 +24,7 @@ public class BannerController {
 
     @RequestMapping({"/test/{id}"})
     @ResponseBody
-    public PersonDTO test(@PathVariable(name="id") Integer uid,
+    public PersonDTO test(@PathVariable(name="id") @Max(value = 10, message = "不可以超过 10 哦哦哦") Integer uid,
                        @RequestParam String name,
                        @RequestBody PersonDTO person) {
         System.out.println("进入 /test 服务" + configuration.getMessage(10001));

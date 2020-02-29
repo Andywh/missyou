@@ -1,6 +1,7 @@
 package com.joy.missyou.dto;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * Created by SongLiang on 2020-02-27
